@@ -43,15 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.querySelector('.hero');
     
     if (floatingCta && heroSection) {
-        window.addEventListener('scroll', () => {
+        const updateCtaVisibility = () => {
             const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-            
-            if (window.scrollY > heroBottom - 100) {
-                floatingCta.style.display = 'block';
-            } else {
-                floatingCta.style.display = 'none';
-            }
-        });
+            const shouldShow = window.scrollY > heroBottom - 100;
+            floatingCta.classList.toggle('visible', shouldShow);
+        };
+        window.addEventListener('scroll', updateCtaVisibility);
+        updateCtaVisibility();
     }
 
     // Theme Toggle & System Preference
