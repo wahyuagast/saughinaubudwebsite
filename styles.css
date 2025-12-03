@@ -108,10 +108,23 @@ img {
 }
 
 .logo {
-    font-family: var(--font-heading);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Aref Ruqaa', serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
+}
+
+.logo-mark {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.logo-text {
+    line-height: 1;
 }
 
 .nav-menu {
@@ -649,5 +662,5 @@ footer {
 }
 
 [data-theme='dark'] .nav-menu {
-    background-color: var(--surface);
+    background-color: transparent;
 }
